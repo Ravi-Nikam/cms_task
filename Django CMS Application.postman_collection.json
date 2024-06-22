@@ -1,0 +1,342 @@
+{
+	"info": {
+		"_postman_id": "8dd6f806-dda3-44e1-8362-114057ece983",
+		"name": "Django CMS Application",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "33291608"
+	},
+	"item": [
+		{
+			"name": "User Account",
+			"item": [
+				{
+					"name": "/accounts/ to create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "ravinikam00786@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "Ravi",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "7405553868",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "M",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Ravi@1234",
+									"type": "text"
+								},
+								{
+									"key": "date_of_birth",
+									"value": "1998-09-12",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8000/accounts/"
+					},
+					"response": []
+				},
+				{
+					"name": "/accounts/login to login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "email",
+									"value": "test@gmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "test",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8000/accounts/login/"
+					},
+					"response": []
+				},
+				{
+					"name": "/accounts/<id> to update user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5MDcxNTM5LCJpYXQiOjE3MTkwNzEyMzksImp0aSI6IjYxNmM3ZTRkMDkyZDQ1NWZiYzFiMDA2NWY0ZGQ2ZWZmIiwidXNlcl9pZCI6NX0.tphZOP2-2ndNuEq-LIgywFxdLxxX2_h6wG6k47nPDS4"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "updated_ravi",
+									"type": "text"
+								},
+								{
+									"key": "phone",
+									"value": "1234567890",
+									"type": "text"
+								},
+								{
+									"key": "date_of_birth",
+									"value": "1898-09-23",
+									"type": "text"
+								},
+								{
+									"key": "gender",
+									"value": "M",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8000/accounts/0"
+					},
+					"response": []
+				},
+				{
+					"name": "/accounts/<id> to delete user",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5MDY2MTQxLCJpYXQiOjE3MTkwNjU4NDEsImp0aSI6ImEyNWZiNzRkOTZmODRmZDZiZTA4Y2ZlN2IxZWYyYzZkIiwidXNlcl9pZCI6NH0.wQFQ8XWY40ubFgVHNcpJIeiYmrklMFeW571VOvH6v9s"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8000/accounts/1"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Post",
+			"item": [
+				{
+					"name": "/blog to create new post (authenticated user)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5MDcxNzQ4LCJpYXQiOjE3MTkwNzE0NDgsImp0aSI6Ijg1MzJmNjk2ZGViMTQxMDVhY2JlZGQ1MzM4Nzc5NDY5IiwidXNlcl9pZCI6NX0.CwWCv5XPqXq55wX6YHDbpfD0db2PFKs2gsKlK4420ec"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Python",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "If you’re interested in getting a unique data set consisting of user-generated posts, Python web scraping can help you get the job done. In this article, we’ll show you how to scrape text data from the web and give you inspiration about what to do with it. Web scraping is the process of downloading data from the source code of a webpage. This data can be anything – text, images, videos, or even data in tables. ",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "3 Jun 2024 Jakub Romanowski ",
+									"type": "text"
+								},
+								{
+									"key": "owner",
+									"value": "5",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8000/blog/"
+					},
+					"response": []
+				},
+				{
+					"name": "/blog to get list ( public post )",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5MDcxNzQ4LCJpYXQiOjE3MTkwNzE0NDgsImp0aSI6Ijg1MzJmNjk2ZGViMTQxMDVhY2JlZGQ1MzM4Nzc5NDY5IiwidXNlcl9pZCI6NX0.CwWCv5XPqXq55wX6YHDbpfD0db2PFKs2gsKlK4420ec"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/blog/"
+					},
+					"response": []
+				},
+				{
+					"name": "/blog to get list (with login)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5MDcxNzQ4LCJpYXQiOjE3MTkwNzE0NDgsImp0aSI6Ijg1MzJmNjk2ZGViMTQxMDVhY2JlZGQ1MzM4Nzc5NDY5IiwidXNlcl9pZCI6NX0.CwWCv5XPqXq55wX6YHDbpfD0db2PFKs2gsKlK4420ec"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/blog/"
+					},
+					"response": []
+				},
+				{
+					"name": "/blog/<id> to retrive single post detail (public post only)",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/blog/4"
+					},
+					"response": []
+				},
+				{
+					"name": "/blog/<id> to retrive post (public/private) authenticatd only",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5MDcyMjU5LCJpYXQiOjE3MTkwNzE5NTksImp0aSI6ImU1ZjY1YjM2ZjNlOTRjZWZiOTA5ZDYxODdiMjVlZjBkIiwidXNlcl9pZCI6NX0.3TYWFy98_KRTgB7FZ8YBUQySJg8lOxpTmUArVIB9O4s"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8000/blog/3/"
+					},
+					"response": []
+				},
+				{
+					"name": "/blog/<id>/ to update post (authenticated)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5MDY4Mjc0LCJpYXQiOjE3MTkwNjc5NzQsImp0aSI6ImM2NTM3YmRjYmZiZDQ3ZTFhNWM2ODM0N2E1ZmJkZDEzIiwidXNlcl9pZCI6Mn0.Q3qzZRX40_Gw-4dqolAZ8mOTv3ulq6uhtBcO41Dhi8o"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "title",
+									"value": "Abc",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "No Content ",
+									"type": "text"
+								},
+								{
+									"key": "content",
+									"value": "xyz",
+									"type": "text"
+								},
+								{
+									"key": "owner",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8000/blog/1/"
+					},
+					"response": []
+				},
+				{
+					"name": "/blog/<id>/ to delete post (authenticated)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5MDY4Mjc0LCJpYXQiOjE3MTkwNjc5NzQsImp0aSI6ImM2NTM3YmRjYmZiZDQ3ZTFhNWM2ODM0N2E1ZmJkZDEzIiwidXNlcl9pZCI6Mn0.Q3qzZRX40_Gw-4dqolAZ8mOTv3ulq6uhtBcO41Dhi8o"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8000/blog/1/"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Likes",
+			"item": [
+				{
+					"name": "/like/<post_id/ to like the blog (authenticated )",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5MDY4Nzk4LCJpYXQiOjE3MTkwNjg0OTgsImp0aSI6IjQ0NjAwNDY2OWM0YzRhOGVhMDQ2ODI3ZDYxNjQ1ZWMxIiwidXNlcl9pZCI6Mn0.ibhwalWVQ4ToQ5WlUVInR6q2jj7Gx5zaO0BuSwnZMdk"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "post",
+									"value": "2",
+									"type": "text"
+								},
+								{
+									"key": "user",
+									"value": "2",
+									"type": "text"
+								}
+							]
+						},
+						"url": "http://localhost:8000/like/2/"
+					},
+					"response": []
+				},
+				{
+					"name": "/like/<post_id>/ to unlike the blog (authenticated)",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzE5MDY5MzMzLCJpYXQiOjE3MTkwNjkwMzMsImp0aSI6ImVkMGJhNjRhZGUwYTQzYzY4ODllYjdiZGFiMzA2OWMwIiwidXNlcl9pZCI6Mn0.kYZGeFyR-zExQ77j8s2S8hO-336ZhDjnvQF_yMaPY-8"
+							}
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:8000/like/2"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
